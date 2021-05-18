@@ -16,7 +16,7 @@ class Pgplot < Formula
 
   depends_on "gcc" # for gfortran
   depends_on "libpng"
-  depends_on "xquartz"
+  depends_on "libx11"
 
   # from MacPorts: https://trac.macports.org/browser/trunk/dports/graphics/pgplot/files
   patch :p0 do
