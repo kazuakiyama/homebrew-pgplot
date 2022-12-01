@@ -82,7 +82,10 @@ class Pgplot < Formula
       end
 
       # make everything
-      system "../makemake .. darwin; make; make cpg; make pgplot.html"
+      system "../makemake .. darwin"
+      system "make"
+      system "make cpg"
+      system "make pgplot.html"
 
       # install
       bin.install "pgxwin_server", "pgbind"
