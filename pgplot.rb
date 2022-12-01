@@ -14,7 +14,8 @@ class Pgplot < Formula
   #  sha256 cellar: :any, high_sierra: "837e69addf8bf9a526fbaf1bfb204fb1a4966dec83295b3628568691d633b613"
   #end
 
-  depends_on "gcc" # for gfortran
+  depends_on "gcc"  # for gfortran
+  depends_on "gawk" # for makedocs (apparently system-defaul awk won't work after catalina)
   depends_on "libpng"
   depends_on "libx11"
 
@@ -41,6 +42,8 @@ class Pgplot < Formula
     inreplace "src/grgfil.f", "/usr/local/pgplot", share
     # perl may not be in /usr/local
     inreplace "makehtml", "/usr/local/bin/perl", which("perl")
+    # use gawk instead of awk
+    inreplace "makedoc", "awk", which("gawk")
     # prevent a "dereferencing pointer to incomplete type" in libpng
     inreplace "drivers/pndriv.c", "setjmp(png_ptr->jmpbuf)", "setjmp(png_jmpbuf(png_ptr))"
 
