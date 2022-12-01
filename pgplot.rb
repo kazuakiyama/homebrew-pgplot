@@ -8,14 +8,8 @@ class Pgplot < Formula
   sha256 "a5799ff719a510d84d26df4ae7409ae61fe66477e3f1e8820422a9a4727a5be4"
   revision 11
 
-  #bottle do
-  #  sha256 cellar: :any, catalina:    "3ed0aa0fd52518e2a8fd10cf856bdd4a892ad5165499df24b39935844fdb6855"
-  #  sha256 cellar: :any, mojave:      "2422381ec9907e1b1045f3c358b9aafe1a2bc7f8f9849bbd4615d5ae0d63480b"
-  #  sha256 cellar: :any, high_sierra: "837e69addf8bf9a526fbaf1bfb204fb1a4966dec83295b3628568691d633b613"
-  #end
-
-  depends_on "gcc"  # for gfortran
   depends_on "gawk" # for makedocs (apparently system-defaul awk won't work after catalina)
+  depends_on "gcc"  # for gfortran
   depends_on "libpng"
   depends_on "libx11"
 
@@ -91,10 +85,10 @@ class Pgplot < Formula
       end
 
       # make everything
-      system "../makemake .. darwin"
+      system "../makemake", "..", "darwin"
       system "make"
-      system "make cpg"
-      system "make pgplot.html"
+      system "make", "cpg"
+      system "make", "pgplot.html"
 
       # install
       bin.install "pgxwin_server", "pgbind"
