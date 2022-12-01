@@ -30,7 +30,7 @@ class Pgplot < Formula
   end
   patch :p0 do
     url "https://raw.githubusercontent.com/kazuakiyama/hb-pgplot-patches/main/implicit.patch"
-    sha256 "bdfa7a348303f7025259bd3f78367519a3d78d0f71f984b472fedfd2ed0a2c67"
+    sha256 "95a9308c263f51f8a765b0d7cfced67a2f1a3ca5bbe0f5316e981035e99dc2c4"
   end
 
   def install
