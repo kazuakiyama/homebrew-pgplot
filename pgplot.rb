@@ -6,7 +6,7 @@ class Pgplot < Formula
   mirror "https://gentoo.osuosl.org/distfiles/pgplot522.tar.gz"
   version "5.2.2"
   sha256 "a5799ff719a510d84d26df4ae7409ae61fe66477e3f1e8820422a9a4727a5be4"
-  revision 10
+  revision 11
 
   #bottle do
   #  sha256 cellar: :any, catalina:    "3ed0aa0fd52518e2a8fd10cf856bdd4a892ad5165499df24b39935844fdb6855"
@@ -20,13 +20,17 @@ class Pgplot < Formula
 
   # from MacPorts: https://trac.macports.org/browser/trunk/dports/graphics/pgplot/files
   patch :p0 do
-    url "https://raw.githubusercontent.com/Homebrew/patches/b520c2d/pgplot/patch-makemake.diff"
+    url "https://raw.githubusercontent.com/kazuakiyama/hb-pgplot-patches/main/patch-makemake.diff"
     sha256 "1af44204240dd91a59c899714b4f6012ff1eccfcad8f2133765beec34d6f1423"
   end
 
   patch :p0 do
-    url "https://raw.githubusercontent.com/Homebrew/patches/b520c2d/pgplot/patch-proccom.c.diff"
+    url "https://raw.githubusercontent.com/kazuakiyama/hb-pgplot-patches/main/patch-proccom.c.diff"
     sha256 "93c55078389c660407c0052569d3ed543c92107c139c765d207b90687cfb7a0c"
+  end
+  patch :p0 do
+    url "https://raw.githubusercontent.com/kazuakiyama/hb-pgplot-patches/main/implicit.patch"
+    sha256 "bdfa7a348303f7025259bd3f78367519a3d78d0f71f984b472fedfd2ed0a2c67"
   end
 
   def install
