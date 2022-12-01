@@ -21,17 +21,23 @@ class Pgplot < Formula
 
   # from MacPorts: https://trac.macports.org/browser/trunk/dports/graphics/pgplot/files
   patch :p0 do
-    url "https://raw.githubusercontent.com/kazuakiyama/hb-pgplot-patches/main/patch-makemake.diff"
+    url "https://raw.githubusercontent.com/kazuakiyama/hb-pgplot-patches/5eba73c0f42daba2d6404550244cc74280d10c4a/patch-makemake.diff"
     sha256 "1af44204240dd91a59c899714b4f6012ff1eccfcad8f2133765beec34d6f1423"
   end
 
   patch :p0 do
-    url "https://raw.githubusercontent.com/kazuakiyama/hb-pgplot-patches/main/patch-proccom.c.diff"
+    url "https://raw.githubusercontent.com/kazuakiyama/hb-pgplot-patches/5eba73c0f42daba2d6404550244cc74280d10c4a/patch-proccom.c.diff"
     sha256 "93c55078389c660407c0052569d3ed543c92107c139c765d207b90687cfb7a0c"
   end
+
   patch :p0 do
-    url "https://raw.githubusercontent.com/kazuakiyama/hb-pgplot-patches/main/implicit.patch"
-    sha256 "95a9308c263f51f8a765b0d7cfced67a2f1a3ca5bbe0f5316e981035e99dc2c4"
+    url "https://raw.githubusercontent.com/kazuakiyama/hb-pgplot-patches/5eba73c0f42daba2d6404550244cc74280d10c4a/patch-grtermio.c.diff"
+    sha256 "b5ef1672509c04b29629b7f4e8ff298a2c5b2900f7c971e3f4fe322285e1cab7"
+  end
+
+  patch :p0 do
+    url "https://raw.githubusercontent.com/kazuakiyama/hb-pgplot-patches/5eba73c0f42daba2d6404550244cc74280d10c4a/patch-grfileio.c.diff"
+    sha256 "83af4d3bce3c00dd97cd42628985d78e9c1783885bed1e7f46c6f91719439ab4"
   end
 
   def install
