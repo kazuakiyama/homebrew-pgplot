@@ -38,6 +38,10 @@ class Pgplot < Formula
     ENV.deparallelize
     ENV.append "CPPFLAGS", "-DPG_PPU"
 
+    if (system 'sw_vers -productVersion').to_f >= 13.0
+      ENV.append "CPPFLAGS", "-mmacosx-version-min=12.4"
+    end
+
     # re-hardcode the share dir
     inreplace "src/grgfil.f", "/usr/local/pgplot", share
     # perl may not be in /usr/local
@@ -59,7 +63,7 @@ class Pgplot < Formula
       FFLAGD=""
       CCOMPL="#{ENV.cc}"
       CFLAGC="#{ENV.cppflags}"
-      CFLAGD=""
+      CFLAGD="#{ENV.cppflags}"
       PGBIND_FLAGS="bsd"
       LIBS="#{ENV.ldflags} -lX11"
       MOTIF_LIBS=""
