@@ -4,7 +4,6 @@ This is a local backup (+ minor modificaiton) of the latest pgplot formula just 
 You can tap this repository and install pgplot.
 
 ## How do I install these formulae?
-
 `brew install kazuakiyama/pgplot/pgplot`
 
 Or `brew tap kazuakiyama/pgplot` and then `brew install pgplot`.
@@ -18,3 +17,7 @@ if [ -e $PGPLOT_DIR ]; then
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PGPLOT_DIR
 fi
 ```
+
+## Contact
+If you find any issues related to this brew formula, please post [issues](https://github.com/kazuakiyama/homebrew-pgplot/issues) in this github repository or directly contact me ([Kazu Akiyama](https://sites.mit.edu/kazuakiyama)). I would note that, as **I'm no longer an active user of PGPLOT**, I do not frequently check the repository or its compatibilities in the latest macOS versions or mac hardware.
+If you do not see my replies in GitHub issues, please consider directly reaching out to me.
