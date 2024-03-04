@@ -18,6 +18,11 @@ if [ -e $PGPLOT_DIR ]; then
 fi
 ```
 
+## Related Brew Formula
+As a radio astronomer, I have a few other brew formulas for radio astronomy packages using PGPLOT. These packages depend on this PGPLOT formula.
+- DIFMAP: a Caltech very long baseline interferometry (VLBI) software package for imaging and calibration of radio interferometric data ([link to the formula](https://github.com/kazuakiyama/homebrew-difmap))
+- SCHED: a spftware package by National Radio Astronomy Observatory (NRAO) for planning and scheduling VLBI observations ([link to the formula](https://github.com/kazuakiyama/homebrew-sched))
+
 ## Contact
 If you find any issues related to this brew formula, please post [issues](https://github.com/kazuakiyama/homebrew-pgplot/issues) in this github repository or directly contact me ([Kazu Akiyama](https://sites.mit.edu/kazuakiyama)). I would note that, as **I'm no longer an active user of PGPLOT**, I do not frequently check the repository or its compatibilities in the latest macOS versions or mac hardware.
 If you do not see my replies in GitHub issues, please consider directly reaching out to me.
