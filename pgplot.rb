@@ -6,7 +6,7 @@ class Pgplot < Formula
   mirror "https://gentoo.osuosl.org/distfiles/pgplot522.tar.gz"
   version "5.2.2"
   sha256 "a5799ff719a510d84d26df4ae7409ae61fe66477e3f1e8820422a9a4727a5be4"
-  revision 12
+  revision 13
 
   depends_on "gawk" # for makedocs (apparently system-defaul awk won't work after catalina)
   depends_on "gcc"  # for gfortran
@@ -38,7 +38,7 @@ class Pgplot < Formula
     ENV.deparallelize
     ENV.append "CPPFLAGS", "-DPG_PPU"
 
-    if MacOS.version >= 13.0
+    if MacOS.version >= :ventura
       ENV.append "CPPFLAGS", "-mmacosx-version-min=12.4"
     end
 
