@@ -38,7 +38,7 @@ class Pgplot < Formula
     ENV.deparallelize
     ENV.append "CPPFLAGS", "-DPG_PPU"
 
-    if (system 'sw_vers -productVersion').to_f >= 13.0
+    if MacOS.version >= 13.0
       ENV.append "CPPFLAGS", "-mmacosx-version-min=12.4"
     end
 
