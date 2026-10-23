@@ -1,28 +1,32 @@
-# homebrew-pgplot
-This is a Homebrew formula for PGPLOT. [homebrew recently removed pgplot for a Licence issue](https://github.com/Homebrew/discussions/discussions/533).
-This is a local backup (+ minor modificaiton) of the latest pgplot formula just before being removed.
-You can tap this repository and install pgplot.
+# homebrew-pgplot: moved to homebrew-vlbi
 
-## How do I install these formulae?
-`brew install kazuakiyama/pgplot/pgplot`
+The PGPLOT Homebrew formula is now maintained in
+[kazuakiyama/homebrew-vlbi](https://github.com/kazuakiyama/homebrew-vlbi),
+together with PGPLOT, SCHED, and DIFMAP.
 
-Or `brew tap kazuakiyama/pgplot` and then `brew install pgplot`.
+## New installations
 
-Don't forget to add paths for PGPLOT. For instance, you can add the following line to your ~/.bashrc_profile or ~/.zprofile files (and remember to source the file to update your current session):
-
-```bash
-PGPLOT_DIR=`brew --prefix pgplot`/lib
-if [ -e $PGPLOT_DIR ]; then
-  export PGPLOT_DIR=$PGPLOT_DIR
-  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PGPLOT_DIR
-fi
+```sh
+brew install kazuakiyama/vlbi/pgplot
 ```
 
-## Related Brew Formula
-As a radio astronomer, I have a few other brew formulas for radio astronomy packages using PGPLOT. These packages depend on this PGPLOT formula.
-- DIFMAP: a Caltech very long baseline interferometry (VLBI) software package for imaging and calibration of radio interferometric data ([link to the formula](https://github.com/kazuakiyama/homebrew-difmap))
-- SCHED: a spftware package by National Radio Astronomy Observatory (NRAO) for planning and scheduling VLBI observations ([link to the formula](https://github.com/kazuakiyama/homebrew-sched))
+## Existing installations
 
-## Contact
-If you find any issues related to this brew formula, please post [issues](https://github.com/kazuakiyama/homebrew-pgplot/issues) in this github repository or directly contact me ([Kazu Akiyama](https://sites.mit.edu/kazuakiyama)). I would note that, as **I'm no longer an active user of PGPLOT**, I do not frequently check the repository or its compatibilities in the latest macOS versions or mac hardware.
-If you do not see my replies in GitHub issues, please consider directly reaching out to me.
+```sh
+brew tap kazuakiyama/vlbi
+brew update
+```
+
+This repository provides a `tap_migrations.json` entry so Homebrew can migrate
+installed `pgplot` formulae to `kazuakiyama/vlbi`. Follow any trust prompts
+displayed by your Homebrew version, then use `brew upgrade` normally.
+After migration, you can remove this old tap with `brew untap kazuakiyama/pgplot`.
+If Homebrew reports that an installed formula still belongs here, leave the tap
+in place and report the migration problem in the new repository.
+
+See the [new README](https://github.com/kazuakiyama/homebrew-vlbi#readme) for
+environment settings, validation coverage, and migration details.
+Please file new packaging issues in
+[homebrew-vlbi](https://github.com/kazuakiyama/homebrew-vlbi/issues).
+
+This repository remains available for migration and historical reference.
