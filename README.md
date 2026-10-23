@@ -4,6 +4,13 @@ The PGPLOT Homebrew formula is now maintained in
 [kazuakiyama/homebrew-vlbi](https://github.com/kazuakiyama/homebrew-vlbi),
 together with PGPLOT, SCHED, and DIFMAP.
 
+## Background
+
+PGPLOT was [removed from Homebrew due to licensing issues](https://github.com/Homebrew/discussions/discussions/533).
+This repository originally preserved the last Homebrew formula available
+before its removal, with minor modifications. That formula is now maintained
+in [homebrew-vlbi](https://github.com/kazuakiyama/homebrew-vlbi).
+
 ## New installations
 
 ```sh
